@@ -128,8 +128,13 @@ class Competition {
 
         List<Team> teamByScore = new ArrayList<>(teams.values());
         Collections.sort(teamByScore);
-        for (Team team : teamByScore) {                // Map isn't iterable object :(
-            report = report + position + ": " + team.name + " " + team.score + '\n';
+        for (Team team : teamByScore) {
+            report = report + position + ": " + team.name + " " + team.score;
+            if (team.score == 1) {
+                report = report + " pt\n";
+            } else {
+                report = report + " pts\n";
+            }
             position += 1;
         }
 
