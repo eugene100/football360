@@ -5,10 +5,10 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [
+    branches:
       - master
       - devops-ci
-    ]
+
   pull_request:
     branches: [ master ]
 
