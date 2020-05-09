@@ -32,7 +32,7 @@ class Team implements Comparable<Team> {
         } else if (this.score < team.score) {
             return 1;
         }
-        return 0;
+        return (name.compareTo(team.name));  // Sort by name if teams have equal scores
     }
 
     @Override
@@ -59,7 +59,7 @@ class Match {
         final String[] m = bulkMatch.trim().split(",");         // Eg bulkMatch: Tarantulas 3, Snakes 1
         int i = 0;
         for (String part: m) {
-            String[] teamBulk = part.trim().split("\\s+", -1);  // Eg teamBulk: Tarantulas 3
+            String[] teamBulk = part.trim().split("\\s+(?=\\S*+$)");  // Eg teamBulk: Tarantulas 3
             teams[i] = new Team(teamBulk[0]);
             goalsTeams[i] = Integer.parseInt(teamBulk[1]);
             i += 1;
@@ -128,8 +128,13 @@ class Competition {
 
         List<Team> teamByScore = new ArrayList<>(teams.values());
         Collections.sort(teamByScore);
-        for (Team team : teamByScore) {                // Map isn't iterable object :(
-            report = report + position + ": " + team.name + " " + team.score + '\n';
+        for (Team team : teamByScore) {
+            report = report + position + ": " + team.name + " " + team.score;
+            if (team.score == 1) {
+                report = report + " pt\n";
+            } else {
+                report = report + " pts\n";
+            }
             position += 1;
         }
 
@@ -159,6 +164,7 @@ public class Football {
     public static void main(final String[] args) throws Exception {
 
         final String pathToCsv = getPathFromArgs(args);
+
 
         final BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
 
