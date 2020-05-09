@@ -20,17 +20,17 @@ class FootballTest {
 
         testData = new String[] {
             "Lions 3, Snakes 3",
-            "Tarantulas 1, FCAwesome 0",
-            "Lions 1, FCAwesome 1",
+            "Tarantulas 1, FC Awesome 0",
+            "Lions 1, FC Awesome 1",
             "Tarantulas 3, Snakes 1",
             "Lions 4, Grouches 0"};
 
         expectedResult = String.join(newLine,
-            "1: Tarantulas 4",
-            "2: Lions 4",
-            "3: FCAwesome 1",
-            "4: Snakes 1",
-            "5: Grouches 0",
+            "1: Lions 4 pts",
+            "2: Tarantulas 4 pts",
+            "3: FC Awesome 1 pt",
+            "4: Snakes 1 pt",
+            "5: Grouches 0 pts",
             "");
     }
 
