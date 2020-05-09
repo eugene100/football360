@@ -59,7 +59,7 @@ class Match {
         final String[] m = bulkMatch.trim().split(",");         // Eg bulkMatch: Tarantulas 3, Snakes 1
         int i = 0;
         for (String part: m) {
-            String[] teamBulk = part.trim().split("\\s+", -1);  // Eg teamBulk: Tarantulas 3
+            String[] teamBulk = part.trim().split("\\s+(?=\\S*+$)");  // Eg teamBulk: Tarantulas 3
             teams[i] = new Team(teamBulk[0]);
             goalsTeams[i] = Integer.parseInt(teamBulk[1]);
             i += 1;
