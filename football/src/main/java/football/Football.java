@@ -32,7 +32,7 @@ class Team implements Comparable<Team> {
         } else if (this.score < team.score) {
             return 1;
         }
-        return 0;
+        return (name.compareTo(team.name));  // Sort by name if teams have equal scores
     }
 
     @Override
@@ -159,6 +159,7 @@ public class Football {
     public static void main(final String[] args) throws Exception {
 
         final String pathToCsv = getPathFromArgs(args);
+
 
         final BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
 
