@@ -1,4 +1,4 @@
-package eugene100;
+package football;
 
 import org.junit.jupiter.api.Test;
 
