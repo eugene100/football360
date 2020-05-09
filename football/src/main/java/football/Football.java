@@ -13,13 +13,18 @@ import java.util.List;
 import java.util.Map;
 
 
-class Team {
+class Team implements Comparable<Team>{
 
     int score = 0;
     String name;
 
     Team(final String name) {
         this.name = name;
+    }
+
+    @Override
+    public int compareTo(Team team) {
+        return this.score - team.score;
     }
 
     @Override
@@ -106,6 +111,14 @@ class Competition {
     @Override
     public String toString() {
         String report = "";
+        int position = 1;
+
+        List<Team> teamByScore = new ArrayList<>(teams.values());
+        Collections.sort(teamByScore);
+        for (Team team : teamByScore) {                // Map isn't iterable object :(
+            report = report + position + ": " + team.name + " " + team.score + '\n';
+            position += 1;
+        }
 
         return report;
     }
