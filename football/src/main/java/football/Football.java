@@ -145,7 +145,7 @@ public class Football {
     private static void printHelp() {
         System.out.println("\nFootball application calculate final scores of teams.");
         System.out.println("\nUsage:");
-        System.out.println("java -cp football/target/classes football.Football <CSV file>\n");
+        System.out.println("java -jar football-<version>.jar <CSV file>\n");
     }
 
     private static String getPathFromArgs(String[] args) {
@@ -159,8 +159,6 @@ public class Football {
     public static void main(final String[] args) throws Exception {
 
         final String pathToCsv = getPathFromArgs(args);
-
-        System.out.println("Processing file: " + pathToCsv);
 
         final BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
 
