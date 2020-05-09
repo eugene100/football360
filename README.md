@@ -1,5 +1,7 @@
 # football360
 
+![Build check](https://github.com/eugene100/football360/workflows/Build%20check/badge.svg)
+
 Football application calculates final scores of teams.
 
 Requirements for the application described [here](doc/task.md)
