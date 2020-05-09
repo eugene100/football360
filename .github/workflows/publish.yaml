@@ -5,8 +5,7 @@ name: Maven Package
 
 on:
   push:
-    branches:
-      - devops-ci
+    branches: [ devops/ci ]
   # release:
   #   types: [created]
 
