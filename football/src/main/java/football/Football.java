@@ -12,19 +12,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * <b>Team</b> class.
+*/
+class Team implements Comparable<Team> {
 
-class Team implements Comparable<Team>{
-
-    int score = 0;
+    int score;
     String name;
 
     Team(final String name) {
         this.name = name;
+        score = 0;
     }
 
     @Override
     public int compareTo(Team team) {
-        return this.score - team.score;
+        if (this.score > team.score) {
+            return -1;
+        } else if (this.score < team.score) {
+            return 1;
+        }
+        return 0;
     }
 
     @Override
@@ -35,14 +43,17 @@ class Team implements Comparable<Team>{
 
 }
 
-
+/**
+ * <b>Match</b> class.
+*/
 class Match {
     Team[] teams;
     int[] goalsTeams;
-    int result = 0; // 1 - Left[0] team winner, 0 - tie, -1 - Right[1] team winner
+    int result;     // 1 - Left[0] team winner, 0 - tie, -1 - Right[1] team winner
                     // ToDo: Change to Enum
 
     public Match(final String bulkMatch) {
+        result = 0;
         teams = new Team[2];
         goalsTeams = new int[2];
         final String[] m = bulkMatch.trim().split(",");         // Eg bulkMatch: Tarantulas 3, Snakes 1
@@ -61,12 +72,14 @@ class Match {
     }
 }
 
-
+/**
+ * <b>Competition</b> class.
+*/
 class Competition {
     ArrayList<Match> matches;
     Map<String, Team> teams;
 
-    public Competition() {
+    Competition() {
         matches = new ArrayList<Match>();
         teams = new HashMap<String, Team>();
     }
@@ -124,7 +137,9 @@ class Competition {
     }
 }
 
-
+/**
+ * <b>Football</b> class.
+*/
 public class Football {
 
     private static void printHelp() {

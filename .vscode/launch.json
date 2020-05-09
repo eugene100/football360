@@ -9,7 +9,6 @@
             "name": "Debug (Launch)-App<Football>",
             "request": "launch",
             "mainClass": "football.Football",
-            "projectName": "Football",
             "args": ["football/src/test/data/test_data.csv"]
         }
     ]
