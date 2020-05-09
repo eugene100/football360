@@ -1,5 +1,7 @@
 # football360
 
+![Java CI with Maven](https://github.com/eugene100/football360/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 Football application calculates final scores of teams.
 
 Requirements for the application described [here](doc/task.md)
