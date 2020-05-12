@@ -27,8 +27,8 @@ java -jar football-<version>.jar <CSV file>
 
 ## Example of output:
 ```
-1: Lions 4 pts
-2: Tarantulas 4 pts
+1: Tarantulas 6 pts
+2: Lions 5 pts
 3: FC Awesome 1 pt
 4: Snakes 1 pt
 5: Grouches 0 pts

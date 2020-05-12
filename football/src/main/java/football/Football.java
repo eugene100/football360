@@ -106,7 +106,7 @@ class Competition {
         switch (match.result) {
             case -1:
                 team = teams.get(match.teams[1].name);
-                team.score += 2;
+                team.score += 3;
                 break;
             case 0:
                 team = teams.get(match.teams[0].name);
@@ -116,7 +116,7 @@ class Competition {
                 break;
             case 1:
                 team = teams.get(match.teams[0].name);
-                team.score += 2;
+                team.score += 3;
                 break;
         }
     }
