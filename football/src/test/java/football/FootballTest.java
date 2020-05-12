@@ -23,13 +23,13 @@ class FootballTest {
             "Tarantulas 1, FC Awesome 0",
             "Lions 1, FC Awesome 1",
             "Tarantulas 3, Snakes 1",
-            "Lions 4, Grouches 0"};
+            "Lions 4, Grouches 0" };
 
         expectedResult = String.join(newLine,
             "1: Tarantulas 6 pts",
             "2: Lions 5 pts",
             "3: FC Awesome 1 pt",
-            "4: Snakes 1 pt",
+            "3: Snakes 1 pt",
             "5: Grouches 0 pts",
             "");
     }

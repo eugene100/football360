@@ -125,17 +125,22 @@ class Competition {
     public String toString() {
         String report = "";
         int position = 1;
+        int prevScore = -1;
+        int prevPosition =-1;
 
         List<Team> teamByScore = new ArrayList<>(teams.values());
         Collections.sort(teamByScore);
         for (Team team : teamByScore) {
-            report = report + position + ": " + team.name + " " + team.score;
-            if (team.score == 1) {
-                report = report + " pt\n";
+            if (team.score == prevScore) {
+                report = report + prevPosition + ": " + team.name + " " + team.score;
             } else {
-                report = report + " pts\n";
+                report = report + position + ": " + team.name + " " + team.score;
+                prevPosition = position;
             }
+            report += team.score == 1 ? " pt\n" : " pts\n";
+
             position += 1;
+            prevScore = team.score;
         }
 
         return report;
